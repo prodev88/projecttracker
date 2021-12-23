@@ -1,0 +1,39 @@
+.upmaindiv {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+.titleup {
+  font-size: 50px;
+  font-weight: bolder;
+}
+.upmaindiv input[type="text"] {
+  height: 70px;
+  width: 700px;
+  outline: none;
+  border: 2px solid black;
+  font-size: 25px;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.upmaindiv button {
+  padding: 10px;
+  margin-left: 20px;
+  color: aliceblue;
+  font-size: 14px;
+  font-weight: bolder;
+  background-color: darkblue;
+  border-radius: 20px;
+  border: 2px solid black;
+  height: 50px;
+  width: 100px;
+  border: none;
+}
+.upmaindiv button:hover {
+  cursor: pointer;
+  background-color: black;
+}
