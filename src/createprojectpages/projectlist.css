@@ -1,0 +1,28 @@
+.prolist {
+  background-color: #404040;
+  height: 90.5vh;
+  padding: 20px;
+}
+.prolist h3 {
+  color: aliceblue;
+  font-size: 40px;
+}
+
+.prolist th {
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.prolist tbody {
+  color: aliceblue;
+  font-size: 25px;
+  background-color: black;
+}
+
+.prolist tr {
+  border-radius: 10px;
+}
+.prolist hr {
+  height: 2px;
+  background-color: aliceblue;
+}

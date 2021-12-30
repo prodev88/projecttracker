@@ -58,6 +58,7 @@ const Signin = () => {
   return (
     <div className="maindivv">
       <div className="box">
+        <h1>COMPANY DASHBOARD</h1>
         <h1> SIGN IN </h1>
         <form>
           <div className="grp">

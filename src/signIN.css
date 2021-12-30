@@ -11,13 +11,14 @@
 
   /* position: relative; */
 }
+
 .box {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background: rgba(0, 0, 0, 0.8);
-  padding: 100px;
+  padding: 70px;
   border-radius: 100px;
 }
 

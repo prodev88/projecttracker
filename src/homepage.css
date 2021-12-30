@@ -13,12 +13,12 @@
 }
 .homepagebuttonind:hover {
   cursor: pointer;
-  font-size: 35px;
+  font-size: 30px;
   font-weight: bolder;
   color: black;
   background-color: white;
 }
-.homepagebuttons {
+/* .homepagebuttons {
   background-color: #404040;
   min-height: 100vh;
-}
+} */

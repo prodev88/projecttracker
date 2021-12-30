@@ -3,10 +3,9 @@ import "./homepage.css";
 import { useState, useEffect } from "react";
 
 import { Link, Route, Routes, useNavigate } from "react-router-dom";
-
+import CreateProject from "./createprojectpages/create-project.component";
 import Myproject from "./myprojects";
-import Upcoming from "./upcomingprojectspage/upcoming";
-import Allprojects from "./allprojects";
+import ProjectList from "./createprojectpages/project-list.component";
 import Mainupcom from "./upcomingprojectspage/mainupcoming";
 
 function Newpage() {
@@ -39,9 +38,11 @@ function Newpage() {
         MY PROJECT
       </button>
 
-      <button className="homepagebuttonind">CREATE PROJECT</button>
+      <button className="homepagebuttonind" onClick={() => change("o")}>
+        ONGOING PROJECT
+      </button>
       <button className="homepagebuttonind" onClick={() => change("a")}>
-        ALL PROJECT
+        CREATE PROJECT
       </button>
       <button className="homepagebuttonind" onClick={() => change("u")}>
         UP COMING
@@ -51,9 +52,14 @@ function Newpage() {
       </button>
       <div>
         {str === "" ? <Myproject /> : <></>}
+        {str === "o" ? <ProjectList /> : <></>}
         {str === "u" ? <Mainupcom></Mainupcom> : <></>}
         {str === "m" ? <Myproject></Myproject> : <></>}
-        {str === "a" ? <Allprojects></Allprojects> : <></>}
+        {str === "a" ? (
+          <CreateProject change={() => change("o")}></CreateProject>
+        ) : (
+          <></>
+        )}
       </div>
     </div>
   );

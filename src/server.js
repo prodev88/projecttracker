@@ -131,6 +131,151 @@ app.delete("/del/:id", (req, res) => {
     res.json(val);
   });
 });
+//
+//
+//
+//CREATE AND ONGOING PROJECTS PAGE
+//
+const ons = mongoose.Schema;
+const sche = new ons(
+  {
+    projectName: {
+      type: String,
+      required: true,
+      unique: true,
+      trim: true,
+      minlength: 3,
+    },
+    description: {
+      type: String,
+      required: true,
+      trim: true,
+      minlength: 3,
+    },
+  },
+  { timestamps: true }
+);
+const Ongoing = mongoose.model("ongoing", sche, "ONG");
+
+//ADDING DATA
+
+//
+
+app.post("/ongoing/add", (req, res) => {
+  const projectName = req.body.projectName;
+  const description = req.body.description;
+  const newProject = new Ongoing({ projectName, description });
+  newProject
+    .save()
+    .then(() => res.json("Project added!"))
+    .catch((err) => res.status(400).json("Error: " + err));
+});
+
+///
+///
+/// FETCH ALL
+
+app.get("/ongoing", (req, res) => {
+  Ongoing.find()
+    .then((ong) => res.json(ong))
+    .catch((err) => res.status(400).json("Error: " + err));
+});
+
+app.get("/ongoing/:id", (req, res) => {
+  Ongoing.findById(req.params.id)
+    .then((ong) => res.json(ong))
+    .catch((err) => res.status(400).json("Error: " + err));
+});
+
+///////
+
+//DELETE
+
+app.delete("/ongoing/:id", (req, res) => {
+  console.log("deleted");
+  Ongoing.findByIdAndDelete(req.params.id)
+    .then(() => res.json("Project deleted."))
+    .catch((err) => res.status(400).json("Error: " + err));
+});
+////
+///
+///UPDATE
+
+app.post("/ongoing/update/:id", (req, res) => {
+  Ongoing.findById(req.params.id)
+    .then((ong) => {
+      ong.projectName = req.body.projectName;
+      ong.description = req.body.description;
+
+      ong
+        .save()
+        .then(() => res.json("Project updated!"))
+        .catch((err) => res.status(400).json("Error: " + err));
+    })
+    .catch((err) => res.status(400).json("Error: " + err));
+});
+//
+///
+
+//SUBSCRIPTION TABLE
+//
+const sub = {
+  employeeemail: {
+    type: String,
+    required: true,
+    trim: true,
+  },
+  projectname: {
+    type: String,
+    required: true,
+    trim: true,
+  },
+  projectid: {
+    type: String,
+    required: true,
+    trim: true,
+  },
+};
+
+const subp = mongoose.model("subpro", sub, "SUB");
+//
+//ADD DATA
+//
+
+app.post("/addsub", (req, res) => {
+  const employeeemail = req.body.employeeemail;
+  const projectname = req.body.projectname;
+  const projectid = req.body.projectid;
+  const newP = new subp({ employeeemail, projectname, projectid });
+  newP
+    .save()
+    .then(() => res.json("Project added!"))
+    .catch((err) => res.status(400).json("Error: " + err));
+});
+
+///  ALL SUB
+app.get("/getsub", (req, res) => {
+  subp.find((err, val) => {
+    if (err) {
+      console.log(err);
+    }
+    res.json(val);
+  });
+});
+//
+//
+
+//SUB DELETE
+//
+
+app.delete("/subdel/:id", (req, res) => {
+  subp.findOneAndDelete({ projectid: req.params.id }, (err, val) => {
+    if (err) {
+      console.log(err);
+    }
+    console.log(val);
+  });
+});
 
 app.listen(4000, () => {
   console.log("on server 4000");

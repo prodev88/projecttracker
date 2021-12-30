@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 import { useState } from "react";
 
-const Signup = () => {
+const Signup = (props) => {
   var [na, changena] = useState("");
   var [em, changeem] = useState("");
   var [pa, changepa] = useState("");
@@ -14,6 +14,7 @@ const Signup = () => {
   let nav = useNavigate();
 
   function handlesubmit(e) {
+    console.log(props);
     na = na.trim();
     em = em.trim();
     pa = pa.trim();

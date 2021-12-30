@@ -5,9 +5,10 @@ import Signup from "./signUP";
 import Newpage from "./homepage";
 import Signin from "./signIN(homepage)";
 import Mainupcom from "./upcomingprojectspage/mainupcoming";
-import Allprojects from "./allprojects";
+import CreateProject from "./createprojectpages/create-project.component";
+import ProjectList from "./createprojectpages/project-list.component";
 import Myproject from "./myprojects";
-
+import EditProject from "./createprojectpages/edit-project.component";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
 
@@ -20,7 +21,9 @@ ReactDOM.render(
         <Route path="/new" element={<Newpage></Newpage>}></Route>
         <Route path="/upcoming" element={<Mainupcom />}></Route>
         <Route path="/myprojects" element={<Myproject />}></Route>
-        <Route path="/allprojects" element={<Allprojects />}></Route>
+        {/* <Route path="/ongoingproject" element={<ProjectList />}></Route> */}
+        <Route path="/createproject" element={<CreateProject />}></Route>
+        <Route path="/edit/:id" element={<EditProject />}></Route>
       </Routes>
     </Router>
   </React.StrictMode>,

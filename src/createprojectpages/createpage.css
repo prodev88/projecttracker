@@ -1,0 +1,51 @@
+.descchange {
+  /* height: 100px; */
+  max-lines: 30;
+}
+
+.createpro {
+  background-color: #404040;
+  height: 90.5vh;
+  padding: 20px;
+}
+
+.createpro h1 {
+  color: aliceblue;
+  font-size: 70px;
+}
+
+.headin {
+  color: aliceblue;
+  font-size: 30px;
+  font-weight: bolder;
+}
+.createpro input[type="submit"] {
+  background-color: black;
+}
+
+.createpro input[type="submit"]:hover {
+  background-color: aliceblue;
+  color: black;
+  font-weight: bolder;
+}
+
+.createpro input[type="text"] {
+  height: 70px;
+  width: 800px;
+  border-radius: 10px;
+  font-size: 30px;
+  color: black;
+  border: 2px solid black;
+}
+.createpro textarea {
+  border-radius: 10px;
+  height: 100px;
+  font-size: 20px;
+  color: black;
+  border: 2px solid black;
+}
+
+.createpro hr {
+  height: 2px;
+  background-color: aliceblue;
+}

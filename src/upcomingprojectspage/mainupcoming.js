@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Temp from "./temp.js";
 import Upcom from "./upcoming";
-
+import "./mainupcoming.css";
 function Mainupcom() {
   const [todol, settodol] = useState([]);
 

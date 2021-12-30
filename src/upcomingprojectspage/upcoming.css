@@ -4,11 +4,13 @@
   gap: 20px;
   justify-content: center;
   align-items: center;
-  margin-top: 40px;
+  /* margin-top: 40px; */
 }
 .titleup {
+  margin-top: 20px;
   font-size: 50px;
   font-weight: bolder;
+  color: aliceblue;
 }
 .upmaindiv input[type="text"] {
   height: 70px;
